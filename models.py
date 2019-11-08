@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, create_engine
+from sqlalchemy import Column, String, Integer, create_engine
 from flask_sqlalchemy import SQLAlchemy
 import json
 import os
@@ -27,8 +27,8 @@ class Person(db.Model):
   __tablename__ = 'People'
 
   id = Column(Integer, primary_key=True)
-  name = Column(String)
-  catchphrase = Column(String)
+  name = Column(String(20))
+  catchphrase = Column(String(20))
 
   def __init__(self, name, catchphrase=""):
     self.name = name
